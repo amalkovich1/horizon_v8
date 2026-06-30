@@ -426,7 +426,7 @@ export default definePluginEntry({
         order: "simple",
         run: async () => ({
           provider: {
-            api: "openai-completions" as const,
+            api: "horizon-v8-raw" as const,
             baseUrl: "https://chat.deepseek.com",
             models: SUPPORTED_MODELS.map(id => {
               const mc = MODEL_CONFIGS[id];
@@ -443,6 +443,15 @@ export default definePluginEntry({
           },
         }),
       },
+
+      // -----------------------------------------------------------------------
+      // resolveSyntheticAuth — gateways doesn't need to check API key, we manage auth ourselves
+      // -----------------------------------------------------------------------
+      resolveSyntheticAuth: (_ctx: any) => ({
+        apiKey: "plugin-managed",
+        source: "horizon_v8 plugin (DeepSeek Web auth)",
+        mode: "api-key" as const,
+      }),
 
       // -----------------------------------------------------------------------
       // createStreamFn — replaces OpenClaw's HTTP transport entirely

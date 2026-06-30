@@ -9,5 +9,15 @@
     "properties": {}
   },
   "entry": "dist/index.js",
-  "label": "Horizon V8"
+  "label": "Horizon V8",
+  "setup": {
+    "providers": [
+      {
+        "id": "horizon_v8",
+        "envVars": [
+          "HORIZON_V8_API_KEY"
+        ]
+      }
+    ]
+  }
 }
