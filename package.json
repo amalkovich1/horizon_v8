@@ -1,9 +1,14 @@
 {
   "name": "horizon_v8",
   "version": "0.2.0",
-  "description": "OpenClaw model provider — DeepSeek Web API (PoW, sessions, streaming)",
+  "description": "OpenClaw model provider \u2014 DeepSeek Web API (PoW, sessions, streaming)",
   "private": true,
   "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
@@ -16,6 +21,12 @@
     "typescript": "^5.7.0",
     "@types/node": "^22.0.0"
   },
-  "keywords": ["openclaw", "plugin", "provider", "deepseek"],
-  "license": "MIT"
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "provider",
+    "deepseek"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js"
 }

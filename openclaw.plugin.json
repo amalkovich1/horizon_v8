@@ -1,26 +1,13 @@
 {
   "id": "horizon_v8",
-  "$schema": "https://openclaw.ai/plugin-schema.json",
+  "kind": "model-provider",
   "name": "Horizon V8",
   "description": "Model provider for DeepSeek Web API (PoW, sessions, streaming)",
-  "version": "0.2.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
   "entry": "dist/index.js",
-  "author": "Artem M",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amalkovich1/horizon_v8.git"
-  },
-  "permissions": {
-    "network": {
-      "connect": ["https://chat.deepseek.com"]
-    },
-    "filesystem": {
-      "read": ["/home/admin/.openclaw/agents/**"]
-    }
-  },
-  "hooks": {
-    "allowConversationAccess": true,
-    "allowPromptInjection": true
-  }
+  "label": "Horizon V8"
 }
