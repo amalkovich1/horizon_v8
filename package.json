@@ -1,7 +1,7 @@
 {
   "name": "horizon_v8",
-  "version": "0.1.0",
-  "description": "Кастомный model provider для OpenClaw: DeepSeek (Web/API), Qwen3, Gemini",
+  "version": "0.2.0",
+  "description": "OpenClaw model provider — DeepSeek Web API (PoW, sessions, streaming)",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,6 +16,6 @@
     "typescript": "^5.7.0",
     "@types/node": "^22.0.0"
   },
-  "keywords": ["openclaw", "plugin", "provider", "deepseek", "qwen", "gemini"],
+  "keywords": ["openclaw", "plugin", "provider", "deepseek"],
   "license": "MIT"
 }

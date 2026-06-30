@@ -2,8 +2,8 @@
   "id": "horizon_v8",
   "$schema": "https://openclaw.ai/plugin-schema.json",
   "name": "Horizon V8",
-  "description": "Кастомный model provider для OpenClaw: DeepSeek (Web/API), Qwen3, Gemini под капотом",
-  "version": "0.1.0",
+  "description": "Model provider for DeepSeek Web API (PoW, sessions, streaming)",
+  "version": "0.2.0",
   "entry": "dist/index.js",
   "author": "Artem M",
   "license": "MIT",
@@ -13,51 +13,10 @@
   },
   "permissions": {
     "network": {
-      "connect": ["https://chat.deepseek.com", "https://api.deepseek.com"]
+      "connect": ["https://chat.deepseek.com"]
     },
     "filesystem": {
-      "read": ["/home/admin/.openclaw/horizon_v8/**"]
-    }
-  },
-  "configSchema": {
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-      "provider": {
-        "type": "string",
-        "description": "Основной провайдер: deepseek-web, deepseek-api, qwen, gemini",
-        "default": "deepseek-web"
-      },
-      "apiKey": {
-        "type": "string",
-        "description": "API ключ для официального DeepSeek API (api.deepseek.com)",
-        "default": ""
-      },
-      "authDir": {
-        "type": "string",
-        "description": "Путь к папке с auth-файлами для DeepSeek Web API",
-        "default": "/home/admin/.openclaw/horizon_v8/auth"
-      },
-      "defaultModel": {
-        "type": "string",
-        "description": "Модель по умолчанию",
-        "default": "deepseek-chat"
-      },
-      "port": {
-        "type": "integer",
-        "description": "Локальный порт для HTTP-сервера (0 = случайный)",
-        "default": 0
-      },
-      "models": {
-        "type": "object",
-        "description": "Каталог доступных моделей",
-        "default": {}
-      },
-      "fallbacks": {
-        "type": "object",
-        "description": "Цепочки фолбеков: модель → модель при ошибке",
-        "default": {}
-      }
+      "read": ["/home/admin/.openclaw/agents/**"]
     }
   },
   "hooks": {
